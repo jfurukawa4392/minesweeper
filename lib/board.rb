@@ -2,6 +2,8 @@ require_relative 'tile'
 
 class Board
 
+  attr_reader :size
+
   def initialize(size = 10)
     # Array set to always be square
     @size = size
@@ -68,5 +70,14 @@ class Board
 
   def out_of_bounds?(row, col)
     (row.between?(0,9) && col.between?(0,9)) ? false : true
+  end
+
+  def flip(row, col)
+    range = [1,2,3]
+    self[row, col].flip!
+    range.each do |dx|
+      range.each do |dy|
+      end
+    end
   end
 end
