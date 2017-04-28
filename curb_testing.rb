@@ -26,6 +26,8 @@ class CurbParser
             # Do something with opts.my_positional_arg, opts.my_keyword_arg,
             # opts.flag, and opts.files
             # ...
+            res = Curl::Easy.http_get(opts.url)
+            puts res.body
         else
             show_help? ? show_help : show_usage
         end
